@@ -25,4 +25,8 @@ conection.connect(function (err) {
 
  function start() {
      // query the database for all items available
+     connection.query("SELECT * FROM products", function (err, results) {
+         if (err) throw err;
+         
+     })
  }
