@@ -8,4 +8,4 @@ To Run the App:
 
 2.  Start app by typing "node bamazonCustomer.js" into a bash terminal.
 
-![ScreenShot](./img/step1.png?raw=true "Step 1")
+![ScreenShot](https://github.com/dmoss215/bamazon/blob/master/img/step1.PNG "Step 1")
