@@ -50,8 +50,7 @@ connection.connect(function (err) {
                  
              }
              if (chosenItem.stock_quantity > parseInt(answer.amount)) {
-                // var newStockAmount = results.stock_quantity -= answer.amount;
-                // console.log(newStockAmount);
+
                 // there was enough in stock, so update db, let the user know, and start over
                 connection.query(                    
                   "UPDATE products SET ? WHERE ?",
@@ -64,16 +63,23 @@ connection.connect(function (err) {
                     }
                   ],
                   function(error) {
+                    var totalPurchaseCost = answer.amount * chosenItem.price;
                     if (err) console.log("Oops... Something went wrong");
+                    console.log("----------------------------------");
                     console.log("Order placed successfully!");
                     console.log("----------------------------------");
+                    console.log("Total Cost: " + totalPurchaseCost);
+                    console.log("----------------------------------");
+
                     start();
                   }
                 );
               }
               else {
                 // not enough in stock
+                console.log("----------------------------------");
                 console.log("Not enough in stock. Try again...");
+                console.log("----------------------------------");
                 start();
               }
           })
